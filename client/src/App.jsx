@@ -1,0 +1,21 @@
+import { Canvas } from "@react-three/fiber";
+import { Experience } from "./components/Experience";
+import { SocketManager } from "./components/SocketManager";
+import { Physics } from '@react-three/rapier'
+
+function App() {
+  return (
+    <>
+      <SocketManager />
+      <Canvas shadows camera={{ position: [8, 8, 8], fov: 30 }}>
+        <color attach="background" args={["#ececec"]} />
+        <Physics>
+          <Experience />
+        </Physics>
+      </Canvas>
+    </>
+
+  );
+}
+
+export default App;
